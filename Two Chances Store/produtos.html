@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Produtos - TWO CHANCES STORE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header, footer {
+            background-color: #222;
+            color: white;
+            padding: 15px 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px;
+        }
+        .categories {
+            min-width: 180px;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .categories h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #504d4d;
+            padding-bottom: 5px;
+        }
+        .categories ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .categories li {
+            margin-bottom: 10px;
+        }
+        .categories a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .categories a:hover {
+            text-decoration: underline;
+        }
+        .products-list {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+        .product-info p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+            color: #000000;
+            font-size: 1.1em;
+        }
+        .product-info small {
+            color: #666;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding: 15px 20px;
+            background-color: #222;
+            color: white;
+        }
+        footer a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-190c-622f-9392-5d8113cd4b58/raw?se=2025-09-17T15%3A56%3A53Z&sp=r&sv=2024-08-04&sr=b&scid=1439ea25-168a-5a31-a324-30028d4da42f&skoid=0da8417a-a4c3-4a19-9b05-b82cee9d8868&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-17T12%3A57%3A09Z&ske=2025-09-18T12%3A57%3A09Z&sks=b&skv=2024-08-04&sig=hsScItv4%2B4IGEYCINa5j9jdc3%2B8ne%2BZv1AjrHoH2%2BL4%3D"
+            TWO CHANCES STORE
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="categories">
+            <h3>Categorias</h3>
+            <ul>
+                <li><a href="#" onclick="filterCategory('Camisas')">Camisas</a></li>
+                <li><a href="#" onclick="filterCategory('Calças')">Calças</a></li>
+                <li><a href="#" onclick="filterCategory('Acessórios')">Acessórios</a></li>
+                <li><a href="#" onclick="filterCategory('Todos')">Todos</a></li>
+            </ul>
+        </aside>
+
+        <section class="products-list" id="products-list">
+            <!-- Produtos serão inseridos via JS -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Contato: mimitoto2020.1@gmail.com | Tel: (11) 99190-9795</p>
+        <p>
+            Siga-nos:
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </p>
+        <p>Política de Devolução | Todos os direitos reservados &copy; 2024</p>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                nome: "Camisa 1of1 Ed Hardy “Hidden Dragon”",
+                preco: 209.99,
+                categoria: "Camisas",
+                descricao: "Camiseta 100% algodão, confortável e estilosa.",
+                imagem: "https://edhardyoficial.com.br/cdn/shop/files/POLO-DRAGAO.png?v=1747007163&width=713"
+            },
+            {
+                id: 2,
+                nome: "Calças Jeans Baggy Para Homens",
+                preco: 200.00,
+                categoria: "Calças",
+                descricao: "Calça jeans baggy masculina, cinza escura, estilosa e confortavel.",
+                imagem: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSwLMNT5okZUZRYbEDRDRD6kZX23xWccUQb7fd-7x6mX21e7vmVtoWrxzMrR2FfB-tzd-l6tQSg7P-1xkoHFU2LYJyEsSAO"
+            },
+            {
+                id: 3,
+                nome: "Camisa NOCTA race star",
+                preco: 399.90,
+                categoria: "Camisas",
+                descricao: "Camisa preta, com um homem correndo. Confortável e estilosa",
+                imagem: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSBmiLRcfiRbQOFvPdvr5CH0laD1vKTnZvBorqfsTSubuS-k2Xe0_ClDrT9nuBce5H0T8H8xZ2bjTMd3NKzeWJwYOc5CIVWiA"
+            },
+            {
+                id: 4,
+                nome: "Boné Chocolate 5 Panel Chunk Marrom",
+                preco: 170.00,
+                categoria: "Acessórios",
+                descricao: "Boné da marca chocolate five panel na cor marrom, bonito e estiloso",
+                imagem: "https://cdn.vnda.com.br/1200x/matrizskate/2024/11/25/12_06_10_357_12_11_1_177_6cef3fa3c2478aaa940173092532019966400.jpg?v=1732547172"
+            },
+            {
+                id: 2,
+                nome: "Calça jeans with cruz e raios",
+                preco: 150.90,
+                categoria: "Calças",
+                descricao: "calça jeans azul com raios e cruz.",
+                imagem: "https://img.ltwebstatic.com/images3_spmp/2025/02/28/ed/1740734621a81ec2fc9c717f48e1e204b8b774b021_thumbnail_405x.webp"
+            },
+            {
+                id: 6,
+                nome: "Camiseta Oriente Azul",
+                preco: 119.90,
+                categoria: "Camisas",
+                descricao: "Camisa azul Dust company",
+                imagem: "https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/thedustcompany/media/uploads/produtos/foto/bjhtjfeq/oriente_5.jpg"
+            },
+            {
+                id: 7,
+                nome: "Camiseta Piet x Oakley Static Logo Off White",
+                preco: 300.90,
+                categoria: "Camisas",
+                descrição: "Camisa da oakley em colaboração com a piet cinza",
+                imagem: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSs0LfXjMjilEuIVnPzY5Cez_KQMSWSdCerbXc3pZvyoimI7SwRDLEcnc3cd8ibewqmKvAyUMrtJWZtRnboKy34i2eQzHmbm2UiuNuW6CV3N4bJiX4AKUXso7I"
+            },
+            {
+                id: 8,
+                nome: "Calça Elevate Wine Sweatpants",
+                preco: 289.90,
+                categoria: "Calças",
+                descrição: "Calça da Take-OFF de moletom na cor vinho",
+                imagem: "https://acdn-us.mitiendanube.com/stores/002/413/027/products/calca111-b902819b8536bdcc0d16842633310498-1024-1024.webp"
+            },
+            {
+                id: 9,
+                nome: "Gorro EGHO Exclusive Beanie (Black)",
+                preco: 209.99,
+                categoria: "Acessórios",
+                descrição: "Gorro para o frio, confortável e estiloso",
+                imagem: "https://s.hipnoise.com.br/gallery/egho-studios-jun-2025-by-fm23203-1-11zon.jpg"
+            },
+            {
+                id: 10,
+                nome: "Calça Exclusivist (1OF1) X Ed Hardy Upstream Flow",
+                preco: 299.90,
+                categoria: "Calças",
+                descricao: "Calça roxa com um peixe na lateral da colaboração da Ed Hardy com a 1of1",
+                imagem: "https://s.hipnoise.com.br/product/2025/08/calca-carpa-2-6-11zon.jpg"
+            },
+            {
+                id:11,
+                nome: "Camiseta Class Engrenagem Class (Black)",
+                preco: 229.90,
+                categoria: "Camisas",
+                descricao: "Camisa da Class com uma engrenagem atrás da logo",
+                imagem: "https://s.hipnoise.com.br/product/2025/06/22522.jpg"
+            },
+            {
+                id: 12,
+                nome: "Camiseta Elo Em Comum Boxy Drywall (Grey)",
+                preco: 239.90,
+                categoria: "Camisas",
+                descricao: "Camisa boxy da Elo com parafusos soltos no meio da camisa",
+                imagem: "https://s.hipnoise.com.br/product/2025/09/dry-wall-1-1-11zon.jpg"
+            },
+            {
+                id: 13,
+                nome: "Pochete Barra Crew Pattern B Jacquard (Black)",
+                preco: 250.00,
+                categoria: "Acessórios",
+                descricao: "Pochete preta basica, confortável e estilosa",
+                imagem: "https://s.hipnoise.com.br/product/2025/09/pochete-pattern-b-5-11zon.jpg"
+            },
+            {
+                id: 14,
+                nome: "Calça EGHO Death Resin Pants",
+                preco: 629.90,
+                categoria: "Calças",
+                descricao: "Calça preta brilhante semelhante ao couro",
+                imagem: "https://s.hipnoise.com.br/gallery/death-resin-pants-1-1-11zon.jpg"
+            },
+            {
+                id: 15,
+                nome: "Bolsa Class Dadora Sling Bag Inverso (Brown/Green)",
+                preco: 699.90,
+                categoria: "Acessórios",
+                descricao: "Bolsa diferenciada da Class",
+                imagem: "https://s.hipnoise.com.br/product/2025/03/12569.jpg"
+            },
+            {
+                id: 16,
+                nome: "Bone Elo Em Comum Five Panel Lines V2 (Grey)",
+                preco: 320.90,
+                categoria: "Acessórios",
+                descricao: "Boné da Elo Em Comum com 'manchas' em cinza mais escuro",
+                imagem: "https://s.hipnoise.com.br/product/2025/09/bone-flanelado-2-5-11zon.jpg"
+            }
+        ];
+
+        const productsList = document.getElementById('products-list');
+
+        function displayProducts(filteredProducts) {
+            productsList.innerHTML = '';
+            if(filteredProducts.length === 0) {
+                productsList.innerHTML = '<p>Nenhum produto encontrado.</p>';
+                return;
+            }
+            filteredProducts.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.onclick = () => {
+                    window.location.href = `produto.html?id=${prod.id}`;
+                };
+                card.innerHTML = `
+                    <img src="${prod.imagem}" alt="${prod.nome}" />
+                    <div class="product-info">
+                        <h3>${prod.nome}</h3>
+                        <p>R$ ${prod.preco.toFixed(2).replace('.', ',')}</p>
+                        <small>${prod.descricao}</small>
+                    </div>
+                `;
+                productsList.appendChild(card);
+            });
+        }
+
+        function filterCategory(cat) {
+            if(cat === 'Todos') {
+                displayProducts(products);
+            } else {
+                const filtered = products.filter(p => p.categoria === cat);
+                displayProducts(filtered);
+            }
+        }
+
+        // Exibe todos os produtos inicialmente
+        displayProducts(products);
+    </script>
+</body>
+</html>

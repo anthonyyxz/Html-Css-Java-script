@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TWO CHANCES STORE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header, footer {
+            background-color: #222;
+            color: white;
+            padding: 15px 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .search-box input[type="text"] {
+            padding: 5px 8px;
+            border-radius: 3px;
+            border: none;
+            font-size: 1em;
+        }
+        .banner {
+            background: url('C:\Users\Aluno\Two Chances Store\Design sem nome.png') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px #000;
+        }
+        .featured-products {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .featured-products h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+        .product-info p {
+            margin: 0;
+            font-weight: bold;
+            color: #000000;
+            font-size: 1.1em;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-190c-622f-9392-5d8113cd4b58/raw?se=2025-09-17T15%3A56%3A53Z&sp=r&sv=2024-08-04&sr=b&scid=1439ea25-168a-5a31-a324-30028d4da42f&skoid=0da8417a-a4c3-4a19-9b05-b82cee9d8868&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-17T12%3A57%3A09Z&ske=2025-09-18T12%3A57%3A09Z&sks=b&skv=2024-08-04&sig=hsScItv4%2B4IGEYCINa5j9jdc3%2B8ne%2BZv1AjrHoH2%2BL4%3D" alt="Logo Loja" />
+            TWO CHANCES STORE
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Buscar produtos..." />
+        </div>
+    </header>
+
+    <section class="banner">
+        Promoções Imperdíveis! Confira os Novos Produtos
+    </section>
+
+    <section class="featured-products">
+        <h2>Produtos em Destaque</h2>
+        <div class="products-grid">
+            <div class="product-card" onclick="location.href='produto.html?id=1'">
+                <img src="https://edhardyoficial.com.br/cdn/shop/files/POLO-DRAGAO.png?v=1747007163&width=713" alt="Camiseta Estilosa" />
+                <div class="product-info">
+                    <h3>Camisa 1of1 Ed Hardy “Hidden Dragon”</h3>
+                    <p>R$ 209,99</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="location.href='produto.html?id=2'">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSBmiLRcfiRbQOFvPdvr5CH0laD1vKTnZvBorqfsTSubuS-k2Xe0_ClDrT9nuBce5H0T8H8xZ2bjTMd3NKzeWJwYOc5CIVWiA" alt="Fone de Ouvido" />
+                <div class="product-info">
+                    <h3>Camisa NOCTA race star</h3>
+                    <p>R$ 399,90</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="location.href='produto.html?id=3'">
+                <img src="https://img.ltwebstatic.com/images3_spmp/2025/02/28/ed/1740734621a81ec2fc9c717f48e1e204b8b774b021_thumbnail_405x.webp" alt="Relógio Moderno" />
+                <div class="product-info">
+                    <h3>Calça jeans with cruz e raios</h3>
+                    <p>R$ 150,90</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contato: mimitoto2020.1@gmail.com | Tel: (15) 99190-9795</p>
+        <p>
+            Siga-nos:
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </p>
+        <p>Política de Devolução | Todos os direitos reservados &copy; 2025</p>
+    </footer>
+</body>
+</html>
