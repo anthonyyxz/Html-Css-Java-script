@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz DDL</title>
+  <link rel="stylesheet" href="Quiz.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <div class="quiz-header">Questão 1 / 5</div>
+    <h2>Quais comandos fazem parte da DDL (Data Definition Language)?</h2>
+    <div class="options">
+      <button class="red"onclick="errou()">SELECT, INSERT, UPDATE</button>
+      <button class="blue"onclick="errou()">GRANT, REVOKE</button>
+      <button class="yellow" onclick="errou()">SUM, COUNT, AVG</button>
+      <button class="green" onclick="acertou()">CREATE, ALTER, DROP</button>
+    </div>
+    <div class="footer">Pontos: <span id="pontos">0</span></div>
+  </div>
+
+  <script>
+    function acertou() {
+      document.getElementById("pontos").innerText = 10;
+      alert("✅ Correto! CREATE, ALTER e DROP fazem parte da DDL.");
+    }
+  </script>
+  <script>
+    function errou() {
+        document.getElementById("pontos").innertext = 0
+        alert("❌ Errado")
+    }
+  </script>
+</body>
+</html>
