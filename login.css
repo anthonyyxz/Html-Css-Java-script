@@ -1,0 +1,121 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    width: 100%;
+    background-color: #2b2b2b;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+header img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* ===== CONTAINER (CENTRALIZAÇÃO) ===== */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+/* ===== CARD DO LOGIN ===== */
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ===== LABELS E INPUTS ===== */
+
+label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff6b6b;
+}
+
+/* ===== BOTÃO ===== */
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff6b6b;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ===== LINK DE RECUPERAÇÃO ===== */
+
+.link {
+    font-size: 13px;
+    margin-top: 10px;
+    display: block;
+    color: #888;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #555;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    width: 100%;
+    background-color: #2b2b2b;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
